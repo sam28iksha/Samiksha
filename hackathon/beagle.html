@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Retriever Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-shelter {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .contact-shelter h2 {
+            margin-top: 0;
+        }
+        .contact-shelter textarea, .contact-shelter input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .contact-shelter button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-shelter button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="dogs.html">Back to Dogs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Beagle</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVGgTwKqcbdzaTTnB2FtRtz7RBgy2644slcA&s" alt="Beagle">
+        <p><strong>Breed:</strong> Beagle</p>
+        <p><strong>Age:</strong> 2 years</p>
+        <p><strong>Pet Shelter:</strong> Happy Tails Shelter</p>
+        <p><strong>Price:</strong> $350</p>
+        <p><strong>Suitable Environment:</strong> Active families, homes with yards, and outdoor lovers.</p>
+
+        <!-- Contact Shelter Section -->
+        <div class="contact-shelter">
+            <h2>Contact Happy Tails Shelter</h2>
+            <form id="contactForm">
+                <input type="email" id="email" placeholder="Enter your email address" required>
+                <textarea id="message" placeholder="Write your message to the shelter here..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="statusMessage" style="margin-top: 10px; color: green;"></p>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('email');
+            const messageBox = document.getElementById('message');
+            const statusMessage = document.getElementById('statusMessage');
+            const emailValue = emailInput.value.trim();
+            const messageValue = messageBox.value.trim();
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailValue || !emailRegex.test(emailValue)) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Please enter a valid email address.';
+            } else if (!messageValue) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Message cannot be empty.';
+            } else {
+                statusMessage.style.color = 'green';
+                statusMessage.textContent = 'Your message has been sent successfully!';
+                emailInput.value = ''; // Clear email input
+                messageBox.value = ''; // Clear message box
+            }
+        });
+    </script>
+</body>
+</html>

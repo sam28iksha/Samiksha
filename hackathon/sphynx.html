@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sphynx Cat Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="cats.html">Back to Cats</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Sphynx Cat</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiInvFwMA9cAjCPjLI5cKCy-1S9e-QdXvgvA&s" alt="Sphynx Cat">
+        <p><strong>Breed:</strong> Sphynx Cat</p>
+        <p><strong>Age:</strong> 1 year</p>
+        <p><strong>Pet Shelter:</strong> Sphynx Haven</p>
+        <p><strong>Price:</strong> $700</p>
+        <p><strong>Suitable Environment:</strong> Indoor homes, people who enjoy the affectionate and playful nature of this breed.</p>
+        <div class="contact-shelter">
+            <h2>Contact Sphynx Haven</h2>
+            <form id="contactFormSphynx">
+                <input type="email" id="emailSphynx" placeholder="Enter your email address" required>
+                <textarea id="messageSphynx" placeholder="Write your message to the shelter here..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="statusMessageSphynx" style="margin-top: 10px; color: green;"></p>
+        </div>
+    </main>
+    <script>
+        document.getElementById('contactFormSphynx').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('emailSphynx');
+            const messageBox = document.getElementById('messageSphynx');
+            const statusMessage = document.getElementById('statusMessageSphynx');
+            if (!emailInput.checkValidity()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Please enter a valid email address.';
+            } else if (!messageBox.value.trim()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Message cannot be empty.';
+            } else {
+                statusMessage.style.color = 'green';
+                statusMessage.textContent = 'Your message has been sent successfully!';
+                emailInput.value = '';
+                messageBox.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

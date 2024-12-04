@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parakeet Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="birds.html">Back to Birds</a></li>
+                <li><a href="cats.html">Cats</a></li>
+                <li><a href="dogs.html">Dogs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Parakeet</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEUS3lrzgGWNxL6KV6CdHX_omLxIIUYifXjg&s" alt="Parakeet">
+        <p><strong>Breed:</strong> Parakeet</p>
+        <p><strong>Age:</strong> 6 months</p>
+        <p><strong>Pet Shelter:</strong> Bird Sanctuary</p>
+        <p><strong>Price:</strong> $50</p>
+        <p><strong>Suitable Environment:</strong> Quiet homes, families with older children, no other large birds.</p>
+
+        <div class="contact-shelter">
+            <h2>Contact Bird Sanctuary</h2>
+            <form id="contactFormParakeet">
+                <input type="email" id="emailParakeet" placeholder="Enter your email address" required>
+                <textarea id="messageParakeet" placeholder="Write your message to the shelter here..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="statusMessageParakeet" style="margin-top: 10px; color: green;"></p>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('contactFormParakeet').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('emailParakeet');
+            const messageBox = document.getElementById('messageParakeet');
+            const statusMessage = document.getElementById('statusMessageParakeet');
+            if (!emailInput.checkValidity()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Please enter a valid email address.';
+            } else if (!messageBox.value.trim()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Message cannot be empty.';
+            } else {
+                statusMessage.style.color = 'green';
+                statusMessage.textContent = 'Your message has been sent successfully!';
+                emailInput.value = '';
+                messageBox.value = '';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

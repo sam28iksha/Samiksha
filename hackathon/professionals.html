@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professionals | Pet Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>🐾 Pet Platform Professionals</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="donate.html">Donate & Volunteer</a></li>
+                <li><a href="products.html">Subscriptions</a></li>
+                <li><a href="toys.html">Pet Toys</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="pro">
+        <h2>Available Professionals</h2>
+        
+        <!-- Section for Veterinarians and Trainers -->
+        <section>
+            <h3>Veterinarians & Trainers</h3>
+            <div class="professional-list">
+                <div class="professional-card">
+                    <h3>Dr. Emily Johnson</h3>
+                    <p>Veterinarian | 10+ years experience</p>
+                </div>
+
+                <div class="professional-card">
+                    <h3>Jane Smith</h3>
+                    <p>Certified Dog Trainer | 8+ years experience</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section for Part-Time Students (Pet Walkers/Sitters) -->
+        <section>
+            <h3>Part-Time Student Pet Sitters/Walkers</h3>
+            <div id="student-list" class="professional-list">
+                <!-- Student profiles will be dynamically inserted here -->
+            </div>
+            <div class="apply-section">
+                <a href="apply.html" class="btn apply">Apply as Pet Walker/Sitter</a>
+            </div>
+        </section>
+    </main>
+
+   
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const studentList = document.getElementById("student-list");
+            const students = JSON.parse(localStorage.getItem("students")) || [];
+
+            // Loop through the students in localStorage and create a profile card for each one
+            students.forEach(student => {
+                const studentCard = document.createElement("div");
+                studentCard.className = "professional-card";
+
+                studentCard.innerHTML = `
+                    <img src="${student.photo}" alt="Photo of ${student.name}" style="width:100px;height:100px;border-radius:50%;">
+                    <h4>${student.name}</h4>
+                    <p>Role: ${student.role === "pet-walking" ? "Pet Walker" : "Pet Sitter"}</p>
+                `;
+
+                studentList.appendChild(studentCard);
+            });
+        });
+    </script>
+</body>
+</html>

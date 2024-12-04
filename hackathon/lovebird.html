@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovebird Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="birds.html">Back to Birds</a></li>
+                <li><a href="cats.html">Cats</a></li>
+                <li><a href="dogs.html">Dogs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Lovebird</h1>
+        <img src="https://www.thesprucepets.com/thmb/GcFV-wtPcd9bcak48hv26bq7jmo=/3504x0/filters:no_upscale():strip_icc()/Lovebirds-GettyImages-510427100-58d005853df78c3c4f3b36e3.jpg" alt="Lovebird">
+        <p><strong>Breed:</strong> Lovebird</p>
+        <p><strong>Age:</strong> 6 months</p>
+        <p><strong>Pet Shelter:</strong> Avian Rescue Shelter</p>
+        <p><strong>Price:</strong> $60</p>
+        <p><strong>Suitable Environment:</strong> Active homes, apartment living, families with children.</p>
+
+        <div class="contact-shelter">
+            <h2>Contact Avian Rescue Shelter</h2>
+            <form id="contactFormLovebird">
+                <input type="email" id="emailLovebird" placeholder="Enter your email address" required>
+                <textarea id="messageLovebird" placeholder="Write your message to the shelter here..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="statusMessageLovebird" style="margin-top: 10px; color: green;"></p>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('contactFormLovebird').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('emailLovebird');
+            const messageBox = document.getElementById('messageLovebird');
+            const statusMessage = document.getElementById('statusMessageLovebird');
+            if (!emailInput.checkValidity()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Please enter a valid email address.';
+            } else if (!messageBox.value.trim()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Message cannot be empty.';
+            } else {
+                statusMessage.style.color = 'green';
+                statusMessage.textContent = 'Your message has been sent successfully!';
+                emailInput.value = '';
+                messageBox.value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>

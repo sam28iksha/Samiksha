@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="professionals.html">Professionals</a></li>
+                <li><a href="products.html">Subscriptions</a></li>
+                <li><a href="donate.html">Donation & Volunteering</a></li>
+                <li><a href="toys.html">Pet Toys</a></li>
+            </ul> 
+        </nav>
+    </header>
+    <main>
+        <h1>Checkout</h1>
+        <p>Scan the QR code below to complete your payment:</p>
+        <img src="WhatsApp Image 2024-12-04 at 00.46.57_33736568.jpg" alt="QR Code" style="width: 150px; height: 150px;">
+        <p><strong>Total Amount:</strong> $<span id="total-amount">0.00</span></p>
+        <p>Thank you for your purchase!</p>
+    </main>
+
+    <script>
+        // Use query parameters or localStorage to pass the total amount
+        const totalAmount = localStorage.getItem('totalAmount') || '0.00';
+        document.getElementById('total-amount').textContent = totalAmount;
+    </script>
+</body>
+
+</html>

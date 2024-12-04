@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himalayan Cat Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="cats.html">Back to Cats</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Himalayan Cat</h1>
+        <img src="https://a-z-animals.com/media/2018/09/Himalayan-in-garden-1024x535.jpg" alt="Himalayan Cat">
+        <p><strong>Breed:</strong> Himalayan Cat</p>
+        <p><strong>Age:</strong> 2 years</p>
+        <p><strong>Pet Shelter:</strong> Himalayan Paws Shelter</p>
+        <p><strong>Price:</strong> $600</p>
+        <p><strong>Suitable Environment:</strong> Calm homes with experienced owners, ideally without other pets.</p>
+        <div class="contact-shelter">
+            <h2>Contact Himalayan Paws Shelter</h2>
+            <form id="contactFormHimalayan">
+                <input type="email" id="emailHimalayan" placeholder="Enter your email address" required>
+                <textarea id="messageHimalayan" placeholder="Write your message to the shelter here..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="statusMessageHimalayan" style="margin-top: 10px; color: green;"></p>
+        </div>
+    </main>
+    <script>
+        document.getElementById('contactFormHimalayan').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('emailHimalayan');
+            const messageBox = document.getElementById('messageHimalayan');
+            const statusMessage = document.getElementById('statusMessageHimalayan');
+            if (!emailInput.checkValidity()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Please enter a valid email address.';
+            } else if (!messageBox.value.trim()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Message cannot be empty.';
+            } else {
+                statusMessage.style.color = 'green';
+                statusMessage.textContent = 'Your message has been sent successfully!';
+                emailInput.value = '';
+                messageBox.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

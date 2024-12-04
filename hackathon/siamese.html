@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siamese Cat Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="cats.html">Back to Cats</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Siamese Cat</h1>
+        <img src="https://images.pexels.com/photos/357141/pexels-photo-357141.jpeg?cs=srgb&dl=pexels-pixabay-357141.jpg&fm=jpg" alt="Siamese Cat">
+        <p><strong>Breed:</strong> Siamese Cat</p>
+        <p><strong>Age:</strong> 2 years</p>
+        <p><strong>Pet Shelter:</strong> Siamese Sanctuary</p>
+        <p><strong>Price:</strong> $550</p>
+        <p><strong>Suitable Environment:</strong> Quiet, calm homes, ideally with no other pets.</p>
+        <div class="contact-shelter">
+            <h2>Contact Siamese Sanctuary</h2>
+            <form id="contactFormSiamese">
+                <input type="email" id="emailSiamese" placeholder="Enter your email address" required>
+                <textarea id="messageSiamese" placeholder="Write your message to the shelter here..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="statusMessageSiamese" style="margin-top: 10px; color: green;"></p>
+        </div>
+    </main>
+    <script>
+        document.getElementById('contactFormSiamese').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('emailSiamese');
+            const messageBox = document.getElementById('messageSiamese');
+            const statusMessage = document.getElementById('statusMessageSiamese');
+            if (!emailInput.checkValidity()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Please enter a valid email address.';
+            } else if (!messageBox.value.trim()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Message cannot be empty.';
+            } else {
+                statusMessage.style.color = 'green';
+                statusMessage.textContent = 'Your message has been sent successfully!';
+                emailInput.value = '';
+                messageBox.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

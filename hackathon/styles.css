@@ -1,0 +1,271 @@
+ 
+body {
+    font-family:"Barriecito", system-ui;;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    background-color: #fcb69f;
+    padding: 1em 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fcb69f;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+footer {
+    background-color: #333;
+    color: #fcb69f;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+body {
+    font-family: "Barriecito", system-ui;;
+    margin: 0;
+    padding: 0;
+    background-color: #fcb69f;
+}
+
+header {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pet-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.pet-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pet-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.pet-card h3 {
+    margin: 10px 0;
+}
+
+.pet-card p {
+    color: #555;
+}
+main {
+    text-align: center; /* Center-align text inside the section */
+    padding: 20px;
+    background: #fcb69f; /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+} 
+
+.home-options {
+    text-align: center;
+    background: #fcb69f; /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    
+    
+    
+}
+
+.home-options h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color:#ff6f61; /* Theme color */
+}
+
+.home-options p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6f61; /* Button color */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color:#ff6f61; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+button:active {
+    background-color: #ff6f61; /* Even darker blue on click */
+    transform: scale(0.95); /* Slight shrink effect */
+}
+
+#indexx{
+    display: flex; /* Enables Flexbox */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 100vh; /* Sets the height of the main section to the full viewport */
+    background-image: url('download.jpeg'); /* Background image */
+    background-size: cover; /* Makes the image cover the full area */
+    background-position: center; /* Centers the background image */
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+}
+#dogss{
+    background-image: url('doggs.jpeg'); /* Background image */
+    background-size: cover; /* Makes the image cover the full area */
+    background-position: center; /* Centers the background image */
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+
+}
+.subscription-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.subscription-block {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.subscription-block h2 {
+    color: #495057;
+}
+
+.subscription-block form label {
+    display: block;
+    margin: 10px 0;
+}
+
+.subscription-block .total-price {
+    font-weight: bold;
+    color: #000000;
+}
+#birdz{
+   
+    background-size: cover; /* Makes the image cover the full area */
+    background-position: center; /* Centers the background image */
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+
+}
+#catz{
+    
+    background-size: cover; /* Makes the image cover the full area */
+    background-position: center; /* Centers the background image */
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+
+}
+.container {
+    text-align: center;
+}
+
+/* Style for the QR Code image */
+.qr-code {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border: 5px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#subscriptions{
+    
+    background-size: cover; /* Makes the image cover the full area */
+    background-position: center; /* Centers the background image */
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+
+}
+#pro{
+    
+    background-size: cover; /* Makes the image cover the full area */
+    background-position: center; /* Centers the background image */
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+    
+}
+.toy-card{
+    background-color: white;
+}
+
+

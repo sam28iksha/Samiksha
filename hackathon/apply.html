@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Application | Pet Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>🐾 Pet Platform - Student Application</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="professionals.html">Professionals</a></li>
+                <li><a href="donate.html">Donate & Volunteer</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Apply to be a Pet Walker/Sitter</h2>
+        <form id="student-application-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="parent-contact">Parent's Contact Number:</label>
+            <input type="tel" id="parent-contact" name="parent-contact" required>
+
+            <label for="student-id">Student ID Number:</label>
+            <input type="text" id="student-id" name="student-id" required>
+
+            <label for="school-college">School/College Name:</label>
+            <input type="text" id="school-college" name="school-college" required>
+
+            <label for="photo">Upload Your Photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+
+            <label for="role">Choose Role:</label>
+            <select id="role" name="role" required>
+                <option value="pet-walking">Pet Walking</option>
+                <option value="pet-sitting">Pet Sitting</option>
+            </select>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2024 Pet Platform | Designed with 🐾</p>
+    </footer>
+
+    <script>
+        document.getElementById("student-application-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const role = document.getElementById("role").value;
+            const photoFile = document.getElementById("photo").files[0];
+            const reader = new FileReader();
+
+            reader.onload = function () {
+                const studentData = {
+                    name: name,
+                    role: role,
+                    photo: reader.result
+                };
+
+                // Retrieve existing data
+                let students = JSON.parse(localStorage.getItem("students")) || [];
+                students.push(studentData);
+                localStorage.setItem("students", JSON.stringify(students));
+
+                alert("Thank you for applying! Your profile will now appear in the Professionals section.");
+                window.location.href = "professionals.html";
+            };
+
+            if (photoFile) {
+                reader.readAsDataURL(photoFile);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maine Coon Cat Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="cats.html">Back to Cats</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Maine Coon Cat</h1>
+        <img src="https://www.marly-dan.com/cdn/shop/articles/448_1200x.jpg?v=1721994010" alt="Maine Coon Cat">
+        <p><strong>Breed:</strong> Maine Coon</p>
+        <p><strong>Age:</strong> 3 years</p>
+        <p><strong>Pet Shelter:</strong> Maine Coon Haven</p>
+        <p><strong>Price:</strong> $650</p>
+        <p><strong>Suitable Environment:</strong> Active homes with plenty of space and people who appreciate their playful nature.</p>
+        <div class="contact-shelter">
+            <h2>Contact Maine Coon Haven</h2>
+            <form id="contactFormMaineCoon">
+                <input type="email" id="emailMaineCoon" placeholder="Enter your email address" required>
+                <textarea id="messageMaineCoon" placeholder="Write your message to the shelter here..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="statusMessageMaineCoon" style="margin-top: 10px; color: green;"></p>
+        </div>
+    </main>
+    <script>
+        document.getElementById('contactFormMaineCoon').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('emailMaineCoon');
+            const messageBox = document.getElementById('messageMaineCoon');
+            const statusMessage = document.getElementById('statusMessageMaineCoon');
+            if (!emailInput.checkValidity()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Please enter a valid email address.';
+            } else if (!messageBox.value.trim()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Message cannot be empty.';
+            } else {
+                statusMessage.style.color = 'green';
+                statusMessage.textContent = 'Your message has been sent successfully!';
+                emailInput.value = '';
+                messageBox.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

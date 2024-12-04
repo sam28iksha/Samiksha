@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotted Cat Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="cats.html">Back to Cats</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Spotted Cat (Indian Billi)</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSar0uhnFDml-jDYtIKFv3ZhVgq_XUHIGEmwQ&s" alt="Spotted Cat (Indian Billi)">
+        <p><strong>Breed:</strong> Spotted Cat (Indian Billi)</p>
+        <p><strong>Age:</strong> 1 year</p>
+        <p><strong>Pet Shelter:</strong> Indian Billi Shelter</p>
+        <p><strong>Price:</strong> $300</p>
+        <p><strong>Suitable Environment:</strong> Active families, people with space for exploration, and outdoor areas.</p>
+        <div class="contact-shelter">
+            <h2>Contact Indian Billi Shelter</h2>
+            <form id="contactFormSpotted">
+                <input type="email" id="emailSpotted" placeholder="Enter your email address" required>
+                <textarea id="messageSpotted" placeholder="Write your message to the shelter here..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="statusMessageSpotted" style="margin-top: 10px; color: green;"></p>
+        </div>
+    </main>
+    <script>
+        document.getElementById('contactFormSpotted').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('emailSpotted');
+            const messageBox = document.getElementById('messageSpotted');
+            const statusMessage = document.getElementById('statusMessageSpotted');
+            if (!emailInput.checkValidity()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Please enter a valid email address.';
+            } else if (!messageBox.value.trim()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Message cannot be empty.';
+            } else {
+                statusMessage.style.color = 'green';
+                statusMessage.textContent = 'Your message has been sent successfully!';
+                emailInput.value = '';
+                messageBox.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

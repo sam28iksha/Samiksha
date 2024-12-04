@@ -1,0 +1,11 @@
+main {
+    display: flex; /* Enables Flexbox */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 100vh; /* Sets the height of the main section to the full viewport */
+    background-image: url('download.jpeg'); /* Background image */
+    background-size: cover; /* Makes the image cover the full area */
+    background-position: center; /* Centers the background image */
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+}

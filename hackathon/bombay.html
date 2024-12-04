@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bombay Cat Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="cats.html">Back to Cats</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Bombay Cat</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3IgTAbK3hD1FyV_t3qzbFEWXro6JYF44Jjg&s" alt="Bombay Cat">
+        <p><strong>Breed:</strong> Bombay Cat</p>
+        <p><strong>Age:</strong> 1 year</p>
+        <p><strong>Pet Shelter:</strong> Bombay Haven Shelter</p>
+        <p><strong>Price:</strong> $450</p>
+        <p><strong>Suitable Environment:</strong> Indoor cats, families, and people who appreciate their affectionate nature.</p>
+        <div class="contact-shelter">
+            <h2>Contact Bombay Haven Shelter</h2>
+            <form id="contactFormBombay">
+                <input type="email" id="emailBombay" placeholder="Enter your email address" required>
+                <textarea id="messageBombay" placeholder="Write your message to the shelter here..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="statusMessageBombay" style="margin-top: 10px; color: green;"></p>
+        </div>
+    </main>
+    <script>
+        document.getElementById('contactFormBombay').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('emailBombay');
+            const messageBox = document.getElementById('messageBombay');
+            const statusMessage = document.getElementById('statusMessageBombay');
+            if (!emailInput.checkValidity()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Please enter a valid email address.';
+            } else if (!messageBox.value.trim()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Message cannot be empty.';
+            } else {
+                statusMessage.style.color = 'green';
+                statusMessage.textContent = 'Your message has been sent successfully!';
+                emailInput.value = '';
+                messageBox.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

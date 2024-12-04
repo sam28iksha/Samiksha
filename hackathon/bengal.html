@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bengal Cat Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="cats.html">Back to Cats</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Bengal Cat</h1>
+        <img src="https://cfa.org/wp-content/uploads/2024/03/ben-profile1-1.jpg" alt="Bengal Cat">
+        <p><strong>Breed:</strong> Bengal Cat</p>
+        <p><strong>Age:</strong> 1 year</p>
+        <p><strong>Pet Shelter:</strong> Bengal Bliss Shelter</p>
+        <p><strong>Price:</strong> $600</p>
+        <p><strong>Suitable Environment:</strong> Spacious homes, active families, and people who can provide mental stimulation.</p>
+        <div class="contact-shelter">
+            <h2>Contact Bengal Bliss Shelter</h2>
+            <form id="contactFormBengal">
+                <input type="email" id="emailBengal" placeholder="Enter your email address" required>
+                <textarea id="messageBengal" placeholder="Write your message to the shelter here..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="statusMessageBengal" style="margin-top: 10px; color: green;"></p>
+        </div>
+    </main>
+    <script>
+        document.getElementById('contactFormBengal').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('emailBengal');
+            const messageBox = document.getElementById('messageBengal');
+            const statusMessage = document.getElementById('statusMessageBengal');
+            if (!emailInput.checkValidity()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Please enter a valid email address.';
+            } else if (!messageBox.value.trim()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Message cannot be empty.';
+            } else {
+                statusMessage.style.color = 'green';
+                statusMessage.textContent = 'Your message has been sent successfully!';
+                emailInput.value = '';
+                messageBox.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

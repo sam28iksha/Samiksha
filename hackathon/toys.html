@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Toys</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+    <style>
+        .toy-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .toy-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .toy-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        #cart {
+            margin-top: 30px;
+            border-top: 2px solid #ddd;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dogs.html">Dogs</a></li>
+                <li><a href="cats.html">Cats</a></li>
+                <li><a href="subscriptions.html">Subscriptions</a></li>
+                <li><a href="#cart">View Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="pet-toys">
+        <h1>Available Pet Toys</h1>
+        <div class="toy-grid">
+            <!-- Toy Cards -->
+            <div class="toy-card">
+                <img src="https://www.ohmypet.in/cdn/shop/products/SOLID-RUBBER-BALL-1-1_grande.jpg?v=1656416149" alt="Rubber Ball">
+                <h3>Rubber Ball</h3>
+                <p>Price: $10</p>
+                <button data-name="Rubber Ball" data-price="10">Buy Now</button>
+            </div>
+            <div class="toy-card">
+                <img src="https://kutkutstyle.com/cdn/shop/files/kutkutstyle-teether-blue-kutkut-dog-chew-toys-for-aggressive-chewers-large-breed-non-toxic-natural-rubber-indestructible-dog-toys-tough-durable-puppy-chew-toy-for-medium-large-dogs-fu_1de9b293-908e-4415-932b-46ef2354fb35.jpg?v=1704777663" alt="Chew Toy">
+                <h3>Chew Toy</h3>
+                <p>Price: $15</p>
+                <button data-name="Chew Toy" data-price="15">Buy Now</button>
+            </div>
+            <div class="toy-card">
+                <img src="https://patmypets.com/wp-content/uploads/2021/08/two-knot-blue-rope.jpg" alt="Rope Toy">
+                <h3>Rope Toy</h3>
+                <p>Price: $12</p>
+                <button data-name="Rope Toy" data-price="12">Buy Now</button>
+            </div>
+            <div class="toy-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK5orEy64T8A4uIlzfSPm9KdH40K00NdS1aw&s" alt="Frisbee">
+                <h3>Frisbee</h3>
+                <p>Price: $8</p>
+                <button data-name="Frisbee" data-price="8">Buy Now</button>
+            </div>
+            <div class="toy-card">
+                <img src="https://images-cdn.ubuy.co.in/661db4c45b70200bfd6d059c-skylety-3-pcs-7-87-inches-dog-stuffed.jpg" alt="Plush Toy">
+                <h3>Plush Toy</h3>
+                <p>Price: $20</p>
+                <button data-name="Plush Toy" data-price="20">Buy Now</button>
+            </div>
+            <!-- Add More Toy Cards (20 more) -->
+            <div class="toy-card">
+                <img src="https://headsupfortails.com/cdn/shop/products/TrixieDumbbellVinylDogSqueakerToy-AssortedColours.jpg?v=1662983703&width=533" alt="Squeaky Toy">
+                <h3>Squeaky Toy</h3>
+                <p>Price: $9</p>
+                <button data-name="Squeaky Toy" data-price="9">Buy Now</button>
+            </div>
+            <div class="toy-card">
+                <img src="https://m.media-amazon.com/images/I/61mFBeafpkS._AC_UF1000,1000_QL80_.jpg" alt="Interactive Toy">
+                <h3>Interactive Toy</h3>
+                <p>Price: $25</p>
+                <button data-name="Interactive Toy" data-price="25">Buy Now</button>
+            </div>
+            <div class="toy-card">
+                <img src="https://images.meesho.com/images/products/446535300/vo5oe_512.webp" alt="Tug Toy">
+                <h3>Tug Toy</h3>
+                <p>Price: $14</p>
+                <button data-name="Tug Toy" data-price="14">Buy Now</button>
+            </div>
+            <div class="toy-card">
+                <img src="https://images-cdn.ubuy.co.in/668393349f029402c6028412-automatic-ball-thrower-for-dogs-small.jpg" alt="Ball Thrower">
+                <h3>Ball Thrower</h3>
+                <p>Price: $18</p>
+                <button data-name="Ball Thrower" data-price="18">Buy Now</button>
+            </div>
+            <div class="toy-card">
+                <img src="https://live.staticflickr.com/65535/52746805340_80d0dd329d_z.jpg" alt="Puzzle Toy">
+                <h3>Puzzle Toy</h3>
+                <p>Price: $22</p>
+                <button data-name="Puzzle Toy" data-price="22">Buy Now</button>
+            </div>
+            <!-- Repeat with more toys -->
+        </div>
+
+        <!-- Cart Section -->
+        <section id="cart">
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+                <p>No items in the cart yet.</p>
+            </div>
+            <p><strong>Subtotal:</strong> $<span id="subtotal">0.00</span></p>
+            <button id="checkout-btn">Proceed to Checkout</button>
+        </section>
+    </main>
+
+    
+
+    <script>
+        const cart = [];
+        const cartItemsDiv = document.getElementById('cart-items');
+        const subtotalSpan = document.getElementById('subtotal');
+
+        // Add to Cart Functionality
+        document.querySelectorAll('.toy-card button').forEach(button => {
+            button.addEventListener('click', () => {
+                const itemName = button.getAttribute('data-name');
+                const itemPrice = parseFloat(button.getAttribute('data-price'));
+
+                const existingItem = cart.find(item => item.name === itemName);
+
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({ name: itemName, price: itemPrice, quantity: 1 });
+                }
+
+                updateCart();
+            });
+        });
+
+        function updateCart() {
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p>No items in the cart yet.</p>';
+            } else {
+                cartItemsDiv.innerHTML = cart
+                    .map(
+                        item =>
+                            `<p>${item.name} - $${item.price} x ${item.quantity} = $${(item.price * item.quantity).toFixed(2)}</p>`
+                    )
+                    .join('');
+            }
+
+            const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            subtotalSpan.textContent = subtotal.toFixed(2);
+        }
+
+        // Checkout Button
+        document.getElementById('checkout-btn').addEventListener('click', () => {
+            const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            if (subtotal > 0) {
+                localStorage.setItem('totalAmount', subtotal.toFixed(2));
+                window.location.href = 'checkout.html';
+            } else {
+                alert('Your cart is empty. Add items to proceed.');
+            }
+        });
+    </script>
+</body>
+
+</html>

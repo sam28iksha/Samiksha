@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dove Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="birds.html">Back to Birds</a></li>
+                <li><a href="cats.html">Cats</a></li>
+                <li><a href="dogs.html">Dogs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Dove</h1>
+        <img src="https://media.istockphoto.com/id/1360923661/photo/flying-pigeon-in-the-woods.jpg?s=612x612&w=0&k=20&c=JeN4oPrEiqz9HPb3p4i6RR1xbZ9thecTeM1dPM7SoHM=" alt="Dove">
+        <p><strong>Breed:</strong> Dove</p>
+        <p><strong>Age:</strong> 6 months</p>
+        <p><strong>Pet Shelter:</strong> Sky Birds Shelter</p>
+        <p><strong>Price:</strong> $40</p>
+        <p><strong>Suitable Environment:</strong> Quiet homes, families with children, low-noise environments.</p>
+
+        <div class="contact-shelter">
+            <h2>Contact Sky Birds Shelter</h2>
+            <form id="contactFormDove">
+                <input type="email" id="emailDove" placeholder="Enter your email address" required>
+                <textarea id="messageDove" placeholder="Write your message to the shelter here..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="statusMessageDove" style="margin-top: 10px; color: green;"></p>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('contactFormDove').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('emailDove');
+            const messageBox = document.getElementById('messageDove');
+            const statusMessage = document.getElementById('statusMessageDove');
+            if (!emailInput.checkValidity()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Please enter a valid email address.';
+            } else if (!messageBox.value.trim()) {
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Message cannot be empty.';
+            } else {
+                statusMessage.style.color = 'green';
+                statusMessage.textContent = 'Your message has been sent successfully!';
+                emailInput.value = '';
+                messageBox.value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
